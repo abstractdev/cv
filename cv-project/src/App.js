@@ -27,100 +27,86 @@ class App extends Component {
         dates: "3000",
       },
     };
-    this.handleNameInput = this.handleNameInput.bind(this);
-    this.handleEmailInput = this.handleEmailInput.bind(this);
-    this.handleSchoolInput = this.handleSchoolInput.bind(this);
-    this.handleDegreeInput = this.handleDegreeInput.bind(this);
-    this.handleEdatesInput = this.handleEdatesInput.bind(this);
-    this.handlePhoneInput = this.handlePhoneInput.bind(this);
-    this.handleCompanyInput = this.handleCompanyInput.bind(this);
-    this.handleTitleInput = this.handleTitleInput.bind(this);
-    this.handleRespInput = this.handleRespInput.bind(this);
-    this.handleWdatesInput = this.handleWdatesInput.bind(this);
+    this.handleInput = this.handleInput.bind(this);
   }
   
 
-  handleNameInput(event) {
+  handleInput(event) {
     event.preventDefault();
-    this.setState({ 
-      general: {
-        name: event.target.value
-      },
-    }, () => console.log(this.state.general.name));
-  }
-  handleEmailInput(event) {
-    event.preventDefault();
-    this.setState({ 
-      general: {
-        email: event.target.value
-      },
-    }, () => console.log(this.state.general.email));
-  }
-  handlePhoneInput(event) {
-    event.preventDefault();
-    this.setState({ 
-      general: {
-        phone: event.target.value
-      },
-    }, () => console.log(this.state.general.phone));
+    switch (event.target.className) {
+      case 'name':
+        this.setState({ 
+          general: {
+            name: event.target.value
+          },
+        }, () => console.log(this.state.general.name));
+        break;
+      case 'email':
+        this.setState({ 
+          general: {
+            email: event.target.value
+          },
+        }, () => console.log(this.state.general.email));
+        break;
+      case 'phone':
+        this.setState({ 
+          general: {
+            phone: event.target.value
+          },
+        }, () => console.log(this.state.general.phone));
+        break;
+      case 'school':
+        this.setState({ 
+          education: {
+            school: event.target.value
+          },
+        }, () => console.log(this.state.education.school));
+        break;
+      case 'degree':
+        this.setState({ 
+          education: {
+            degree: event.target.value
+          },
+        }, () => console.log(this.state.education.degree));
+        break;
+      case 'eDates':
+        this.setState({ 
+          education: {
+            dates: event.target.value
+          },
+        }, () => console.log(this.state.education.dates));
+        break;
+      case 'company':
+        this.setState({ 
+          work: {
+            company: event.target.value
+          },
+        }, () => console.log(this.state.work.company));
+        break;
+      case 'title':
+        this.setState({ 
+          work: {
+            title: event.target.value
+          },
+        }, () => console.log(this.state.work.title));
+        break;
+      case 'resp':
+        this.setState({ 
+          work: {
+            resp: event.target.value
+          },
+        }, () => console.log(this.state.work.resp));
+        break;
+      case 'wDates':
+        this.setState({ 
+          work: {
+            dates: event.target.value
+          },
+        }, () => console.log(this.state.work.dates));
+        break;
+    }
   }
 
-  handleSchoolInput(event) {
-    event.preventDefault();
-    this.setState({ 
-      education: {
-        school: event.target.value
-      },
-    }, () => console.log(this.state.education.school));
-  }
-  handleDegreeInput(event) {
-    event.preventDefault();
-    this.setState({ 
-      education: {
-        degree: event.target.value
-      },
-    }, () => console.log(this.state.education.degree));
-  }
-  handleEdatesInput(event) {
-    event.preventDefault();
-    this.setState({ 
-      education: {
-        dates: event.target.value
-      },
-    }, () => console.log(this.state.education.dates));
-  }
-  handleCompanyInput(event) {
-    event.preventDefault();
-    this.setState({ 
-      work: {
-        company: event.target.value
-      },
-    }, () => console.log(this.state.work.company));
-  }
-  handleTitleInput(event) {
-    event.preventDefault();
-    this.setState({ 
-      work: {
-        title: event.target.value
-      },
-    }, () => console.log(this.state.work.title));
-  }
-  handleRespInput(event) {
-    event.preventDefault();
-    this.setState({ 
-      work: {
-        resp: event.target.value
-      },
-    }, () => console.log(this.state.work.resp));
-  }
-  handleWdatesInput(event) {
-    event.preventDefault();
-    this.setState({ 
-      work: {
-        dates: event.target.value
-      },
-    }, () => console.log(this.state.work.dates));
-  }
 
   render() {
     const { general, education, work} = this.state
@@ -130,9 +116,9 @@ class App extends Component {
           <Header /> 
         </div>
       <div className="app">
-        <General name={general.name} email={general.email} phone={general.phone} handleNameInput={this.handleNameInput} handleEmailInput={this.handleEmailInput} handlePhoneInput={this.handlePhoneInput}/>
-        <Education school={education.school} degree={education.degree} eDates={education.dates} handleSchoolInput={this.handleSchoolInput} handleDegreeInput={this.handleDegreeInput} handleEdatesInput={this.handleEdatesInput}/>
-        <Work company={work.company} title={work.title} resp={work.resp} wDates={work.dates} handleCompanyInput={this.handleCompanyInput} handleTitleInput={this.handleTitleInput} handleRespInput={this.handleRespInput} handleWdatesInput={this.handleWdatesInput}/>
+        <General name={general.name} email={general.email} phone={general.phone} handleInput={this.handleInput}/>
+        <Education school={education.school} degree={education.degree} eDates={education.dates} handleInput={this.handleInput} />
+        <Work company={work.company} title={work.title} resp={work.resp} wDates={work.dates} handleInput={this.handleInput} />
         <button className="createCVButton" type="submit">Create CV</button>
       </div>
       </div>

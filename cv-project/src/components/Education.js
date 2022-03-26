@@ -3,7 +3,7 @@ import "../styles/Education.css";
 
 class Education extends Component {
   render() {
-    const { school, degree, eDates, handleSchoolInput, handleDegreeInput, handleEdatesInput } = this.props;
+    const { school, degree, eDates, handleInput } = this.props;
     return (
         <div>
           <div className="educationHeaderContainer">
@@ -19,7 +19,7 @@ class Education extends Component {
                   className="school"
                   type="text"
                   value={school || ''}
-                  onChange={(event) => handleSchoolInput(event)}
+                  onChange={(event) => handleInput(event)}
                 ></input>
               </div>
               <div className="degreeContainer">
@@ -29,7 +29,7 @@ class Education extends Component {
                   className="degree"
                   type="text"
                   value={degree || ''}
-                  onChange={(event) => handleDegreeInput(event)}
+                  onChange={(event) => handleInput(event)}
                 ></input>
               </div>
               <div className="eDatesContainer">
@@ -39,7 +39,7 @@ class Education extends Component {
                   className="eDates"
                   type="text"
                   value={eDates || ''}
-                  onChange={(event) => handleEdatesInput(event)}
+                  onChange={(event) => handleInput(event)}
                 ></input>
               </div>
               <button className="educationSubmitButton" type="submit">Save</button>

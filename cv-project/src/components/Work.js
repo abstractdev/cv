@@ -3,7 +3,7 @@ import "../styles/Work.css";
 
 class Work extends Component {
   render() {
-    const { company, title, resp, wDates, handleCompanyInput, handleTitleInput, handleRespInput, handleWdatesInput } = this.props;
+    const { company, title, resp, wDates, handleInput } = this.props;
     return (
           <div>
             <div className="workHeaderContainer">
@@ -19,7 +19,7 @@ class Work extends Component {
                   className="company"
                   type="text"
                   value={company || ''}
-                  onChange={(event) => handleCompanyInput(event)}
+                  onChange={(event) => handleInput(event)}
                 ></input>
               </div>
               <div className="titleContainer">
@@ -29,7 +29,7 @@ class Work extends Component {
                   className="title"
                   type="text"
                   value={title || ''}
-                  onChange={(event) => handleTitleInput(event)}
+                  onChange={(event) => handleInput(event)}
                 ></input>
               </div>
               <div className="respContainer">
@@ -39,7 +39,7 @@ class Work extends Component {
                   className="resp"
                   type="text"
                   value={resp || ''}
-                  onChange={(event) => handleRespInput(event)}
+                  onChange={(event) => handleInput(event)}
                 ></input>
               </div>
               <div className="wDatesContainer">
@@ -49,7 +49,7 @@ class Work extends Component {
                   className="wDates"
                   type="text"
                   value={wDates || ''}
-                  onChange={(event) => handleWdatesInput(event)}
+                  onChange={(event) => handleInput(event)}
                 ></input>
               </div>
               <button className="workSubmitButton" type="submit">Save</button>

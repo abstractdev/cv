@@ -6,7 +6,7 @@ class General extends Component {
     super(props);
   }
   render() {
-    const { name, email, phone, handleNameInput, handleEmailInput, handlePhoneInput } = this.props;
+    const { name, email, phone, handleInput } = this.props;
     return (
         <div>
           <div className="generalHeaderContainer">
@@ -22,7 +22,7 @@ class General extends Component {
                   className="name"
                   type="text"
                   value={name || ''}
-                  onChange={(event) => handleNameInput(event)}
+                  onChange={(event) => handleInput(event)}
                 ></input>
               </div>
               <div className="emailContainer">
@@ -32,7 +32,7 @@ class General extends Component {
                   className="email"
                   type="text"
                   value={email || ''}
-                  onChange={(event) => handleEmailInput(event)}
+                  onChange={(event) => handleInput(event)}
                 ></input>
               </div>
               <div className="phoneContainer">
@@ -42,7 +42,7 @@ class General extends Component {
                   className="phone"
                   type="text"
                   value={phone || ''}
-                  onChange={(event) => handlePhoneInput(event)}
+                  onChange={(event) => handleInput(event)}
                 ></input>
               </div>
               <button className="generalSubmitButton" type="submit">Save</button>
