@@ -2,11 +2,8 @@ import React, { Component } from "react";
 import "../styles/Work.css";
 
 class Work extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
-    const { company, title, resp, wDates } = this.props;
+    const { company, title, resp, wDates, handleCompanyInput, handleTitleInput, handleRespInput, handleWdatesInput } = this.props;
     return (
           <div>
             <div className="workHeaderContainer">
@@ -21,6 +18,8 @@ class Work extends Component {
                   name="company"
                   className="company"
                   type="text"
+                  value={company || ''}
+                  onChange={(event) => handleCompanyInput(event)}
                 ></input>
               </div>
               <div className="titleContainer">
@@ -29,6 +28,8 @@ class Work extends Component {
                   name="title"
                   className="title"
                   type="text"
+                  value={title || ''}
+                  onChange={(event) => handleTitleInput(event)}
                 ></input>
               </div>
               <div className="respContainer">
@@ -37,6 +38,8 @@ class Work extends Component {
                   name="resp"
                   className="resp"
                   type="text"
+                  value={resp || ''}
+                  onChange={(event) => handleRespInput(event)}
                 ></input>
               </div>
               <div className="wDatesContainer">
@@ -45,6 +48,8 @@ class Work extends Component {
                   name="wDates"
                   className="wDates"
                   type="text"
+                  value={wDates || ''}
+                  onChange={(event) => handleWdatesInput(event)}
                 ></input>
               </div>
               <button className="workSubmitButton" type="submit">Save</button>

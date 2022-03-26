@@ -2,11 +2,8 @@ import React, { Component } from "react";
 import "../styles/Education.css";
 
 class Education extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
-    const { school, degree, eDates } = this.props;
+    const { school, degree, eDates, handleSchoolInput, handleDegreeInput, handleEdatesInput } = this.props;
     return (
         <div>
           <div className="educationHeaderContainer">
@@ -21,6 +18,8 @@ class Education extends Component {
                   name="school"
                   className="school"
                   type="text"
+                  value={school || ''}
+                  onChange={(event) => handleSchoolInput(event)}
                 ></input>
               </div>
               <div className="degreeContainer">
@@ -29,6 +28,8 @@ class Education extends Component {
                   name="degree"
                   className="degree"
                   type="text"
+                  value={degree || ''}
+                  onChange={(event) => handleDegreeInput(event)}
                 ></input>
               </div>
               <div className="eDatesContainer">
@@ -37,6 +38,8 @@ class Education extends Component {
                   name="eDates"
                   className="eDates"
                   type="text"
+                  value={eDates || ''}
+                  onChange={(event) => handleEdatesInput(event)}
                 ></input>
               </div>
               <button className="educationSubmitButton" type="submit">Save</button>
