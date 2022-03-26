@@ -6,7 +6,7 @@ class General extends Component {
     super(props);
   }
   render() {
-    const { name, email, phone, handleInput } = this.props;
+    const { name, email, phone, handleInput, handleSubmit } = this.props;
     return (
         <div>
           <div className="generalHeaderContainer">
@@ -14,14 +14,14 @@ class General extends Component {
             <button className="generalEditButton" type="submit">Edit</button>
           </div>
           <div className="generalContainer">
-            <form className="generalForm">
+            <form className="generalForm" onSubmit={(event) => handleSubmit(event)}>
               <div className="nameContainer">
                 <label htmlFor="name">Name</label>
                 <input
                   name="name"
                   className="name"
                   type="text"
-                  value={name || ''}
+                  value={name}
                   onChange={(event) => handleInput(event)}
                 ></input>
               </div>
@@ -31,7 +31,7 @@ class General extends Component {
                   name="email"
                   className="email"
                   type="text"
-                  value={email || ''}
+                  value={email}
                   onChange={(event) => handleInput(event)}
                 ></input>
               </div>
@@ -41,7 +41,7 @@ class General extends Component {
                   name="phone"
                   className="phone"
                   type="text"
-                  value={phone || ''}
+                  value={phone}
                   onChange={(event) => handleInput(event)}
                 ></input>
               </div>
@@ -52,5 +52,4 @@ class General extends Component {
     );
   }
 }
-
 export default General;

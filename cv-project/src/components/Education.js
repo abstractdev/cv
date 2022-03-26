@@ -3,7 +3,7 @@ import "../styles/Education.css";
 
 class Education extends Component {
   render() {
-    const { school, degree, eDates, handleInput } = this.props;
+    const { school, degree, eDates, handleInput, handleSubmit } = this.props;
     return (
         <div>
           <div className="educationHeaderContainer">
@@ -11,14 +11,14 @@ class Education extends Component {
             <button className="educationEditButton" type="submit">Edit</button>
           </div>
           <div className="educationContainer">
-            <form className="educationForm" onSubmit={this.handleFormSubmit}>
+            <form className="educationForm" onSubmit={(event) => handleSubmit(event)}>
               <div className="schoolContainer">
                 <label htmlFor="school">School</label>
                 <input
                   name="school"
                   className="school"
                   type="text"
-                  value={school || ''}
+                  value={school}
                   onChange={(event) => handleInput(event)}
                 ></input>
               </div>
@@ -28,7 +28,7 @@ class Education extends Component {
                   name="degree"
                   className="degree"
                   type="text"
-                  value={degree || ''}
+                  value={degree}
                   onChange={(event) => handleInput(event)}
                 ></input>
               </div>
@@ -38,7 +38,7 @@ class Education extends Component {
                   name="eDates"
                   className="eDates"
                   type="text"
-                  value={eDates || ''}
+                  value={eDates}
                   onChange={(event) => handleInput(event)}
                 ></input>
               </div>

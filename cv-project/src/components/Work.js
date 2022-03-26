@@ -3,7 +3,7 @@ import "../styles/Work.css";
 
 class Work extends Component {
   render() {
-    const { company, title, resp, wDates, handleInput } = this.props;
+    const { company, title, resp, wDates, handleInput, handleSubmit } = this.props;
     return (
           <div>
             <div className="workHeaderContainer">
@@ -11,14 +11,14 @@ class Work extends Component {
             <button className="workEditButton" type="submit">Edit</button>
                     </div>
                   <div className="workContainer">
-            <form className="workForm" onSubmit={this.handleFormSubmit}>
+            <form className="workForm" onSubmit={(event) => handleSubmit(event)}>
               <div className="companyContainer">
                 <label htmlFor="company">Company</label>
                 <input
                   name="company"
                   className="company"
                   type="text"
-                  value={company || ''}
+                  value={company}
                   onChange={(event) => handleInput(event)}
                 ></input>
               </div>
@@ -28,7 +28,7 @@ class Work extends Component {
                   name="title"
                   className="title"
                   type="text"
-                  value={title || ''}
+                  value={title}
                   onChange={(event) => handleInput(event)}
                 ></input>
               </div>
@@ -38,7 +38,7 @@ class Work extends Component {
                   name="resp"
                   className="resp"
                   type="text"
-                  value={resp || ''}
+                  value={resp}
                   onChange={(event) => handleInput(event)}
                 ></input>
               </div>
@@ -48,7 +48,7 @@ class Work extends Component {
                   name="wDates"
                   className="wDates"
                   type="text"
-                  value={wDates || ''}
+                  value={wDates}
                   onChange={(event) => handleInput(event)}
                 ></input>
               </div>
