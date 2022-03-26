@@ -4,7 +4,9 @@ import '../styles/Header.css'
 class Header extends Component {
     render() {
       return (
-          <h1 className="header">CV Creator</h1>
+          <div className="headerContainer">
+            <h1 className="header">CV Creator</h1>
+          </div>
       );
     }
   }
