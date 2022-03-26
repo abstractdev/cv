@@ -10,119 +10,88 @@ class App extends Component {
     super(props);
 
     this.state = {
-      general: {
         name: "John Doe",
         email: "johndoe@johndoe.com",
         phone: "1234567890",
-      },
-      education: {
         school: "A",
         degree: "B",
-        dates: "2000",
-      },
-      work: {
+        eDates: "2000",
         company: "X",
         title: "Y",
         resp: "Z",
-        dates: "3000",
-      },
-    };
+        wDates: "3000",
+      };
     this.handleInput = this.handleInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   
 
   handleInput(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    }, () => console.log(this.state));
+  }
+
+  handleSubmit (event) {
     event.preventDefault();
     switch (event.target.className) {
-      case 'name':
-        this.setState({ 
-          general: {
-            name: event.target.value
-          },
-        }, () => console.log(this.state.general.name));
+      case "generalForm":
+        this.setState({
+          name: this.state.name,
+          email: this.state.email,
+          phone: this.state.phone,
+        }, () => console.log(this.state))
         break;
-      case 'email':
-        this.setState({ 
-          general: {
-            email: event.target.value
-          },
-        }, () => console.log(this.state.general.email));
+      case "educationForm":
+        this.setState({
+          school: this.state.school,
+          degree: this.state.degree,
+          eDates: this.state.eDates,
+        }, () => console.log(this.state))
         break;
-      case 'phone':
-        this.setState({ 
-          general: {
-            phone: event.target.value
-          },
-        }, () => console.log(this.state.general.phone));
+      case "workForm":
+        this.setState({
+          company: this.state.company,
+          title: this.state.title,
+          resp: this.state.phorespne,
+          wDates: this.state.wDates,
+        }, () => console.log(this.state))
         break;
-      case 'school':
+      case "createCVButton":
         this.setState({ 
-          education: {
-            school: event.target.value
-          },
-        }, () => console.log(this.state.education.school));
+          name: this.state.name,
+          email: this.state.email,
+          phone: this.state.phone,
+          school: this.state.school,
+          degree: this.state.degree,
+          eDates: this.state.eDates,
+          company: this.state.company,
+          title: this.state.title,
+          resp: this.state.resp,
+          wDates: this.state.wDates,
+        }, () => console.log(this.state));
         break;
-      case 'degree':
-        this.setState({ 
-          education: {
-            degree: event.target.value
-          },
-        }, () => console.log(this.state.education.degree));
-        break;
-      case 'eDates':
-        this.setState({ 
-          education: {
-            dates: event.target.value
-          },
-        }, () => console.log(this.state.education.dates));
-        break;
-      case 'company':
-        this.setState({ 
-          work: {
-            company: event.target.value
-          },
-        }, () => console.log(this.state.work.company));
-        break;
-      case 'title':
-        this.setState({ 
-          work: {
-            title: event.target.value
-          },
-        }, () => console.log(this.state.work.title));
-        break;
-      case 'resp':
-        this.setState({ 
-          work: {
-            resp: event.target.value
-          },
-        }, () => console.log(this.state.work.resp));
-        break;
-      case 'wDates':
-        this.setState({ 
-          work: {
-            dates: event.target.value
-          },
-        }, () => console.log(this.state.work.dates));
-        break;
-    }
+      }
+    
+    // }
   }
 
 
   render() {
-    const { general, education, work} = this.state
+    const { name, email, phone, school, degree, eDates, company, title, resp, wDates} = this.state
     return (
       <div>
         <div className="headerContainer">
           <Header /> 
         </div>
       <div className="app">
-        <General name={general.name} email={general.email} phone={general.phone} handleInput={this.handleInput}/>
-        <Education school={education.school} degree={education.degree} eDates={education.dates} handleInput={this.handleInput} />
-        <Work company={work.company} title={work.title} resp={work.resp} wDates={work.dates} handleInput={this.handleInput} />
-        <button className="createCVButton" type="submit">Create CV</button>
+        <General name={name} email={email} phone={phone} handleInput={this.handleInput} handleSubmit={this.handleSubmit}/>
+        <Education school={school} degree={degree} eDates={eDates} handleInput={this.handleInput} handleSubmit={this.handleSubmit} />
+        <Work company={company} title={title} resp={resp} wDates={wDates} handleInput={this.handleInput} handleSubmit={this.handleSubmit} />
+        <button className="createCVButton" onClick={(event) => this.handleSubmit(event)}>Create CV</button>
       </div>
       </div>
-    );
+    )
   }
 }
 export default App;
