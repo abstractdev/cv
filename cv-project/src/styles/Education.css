@@ -1,0 +1,54 @@
+.educationContainer {
+    display: flex;
+    flex-direction: column;
+    background: green;
+    padding: 2rem;
+
+}
+.educationHeaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+
+.educationHeader {
+    font-size: 2rem;
+}
+
+
+.educationForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.schoolContainer {
+    display: flex;
+    width: 65%;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.degreeContainer {
+    display: flex;
+    width: 65%;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.eDatesContainer {
+    display: flex;
+    width: 65%;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.educationSubmitButton {
+    width: 50%;
+    height: 50px;
+    border-radius: 20px;
+}

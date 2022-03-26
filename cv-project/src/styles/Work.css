@@ -1,0 +1,61 @@
+.workContainer {
+    display: flex;
+    flex-direction: column;
+    background: purple;
+    padding: 2rem;
+
+}
+.workHeaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.workHeader {
+    font-size: 2rem;
+}
+
+
+.workForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.companyContainer {
+    display: flex;
+    width: 65%;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.titleContainer {
+    display: flex;
+    width: 65%;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.respContainer {
+    display: flex;
+    width: 65%;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.wDatesContainer {
+    display: flex;
+    width: 65%;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.workSubmitButton {
+    width: 50%;
+    height: 50px;
+    border-radius: 20px;
+}

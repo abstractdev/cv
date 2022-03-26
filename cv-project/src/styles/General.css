@@ -1,0 +1,53 @@
+.generalContainer {
+    display: flex;
+    flex-direction: column;
+    background: red;
+    padding: 2rem;
+}
+
+.generalHeaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+.generalHeader {
+    font-size: 2rem;
+}
+
+
+.generalForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.nameContainer {
+    display: flex;
+    width: 65%;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.emailContainer {
+    display: flex;
+    width: 65%;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.phoneContainer {
+    display: flex;
+    width: 65%;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.generalSubmitButton {
+    width: 50%;
+    height: 50px;
+    border-radius: 20px;
+}
