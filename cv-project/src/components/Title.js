@@ -1,12 +1,11 @@
-import React, { Component } from "react";
-import '/home/a/repos/cv/cv-project/src/App.css'
+import React from "react";
+import '../App.css'
 
-class Title extends Component {
-  render() {
-    const { title, handleInput} = this.props;
+const Title = (props) => {
+    const { title, handleInput} = props;
 
     return (
-      (this.props.saved) ?
+      (props.saved) ?
       <div className="contentContainer">
       <div className="leftContainer">
         <div className="leftDiv">Title:</div>
@@ -24,6 +23,5 @@ class Title extends Component {
       ></input>
         
     );
-  }
 }
 export default Title;

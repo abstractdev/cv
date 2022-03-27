@@ -1,12 +1,11 @@
-import React, { Component } from "react";
-import '/home/a/repos/cv/cv-project/src/App.css'
+import React from "react";
+import '../App.css'
 
-class Email extends Component {
-    render() {
-        const { email, handleInput} = this.props;
+const Email = (props) => {
+        const { email, handleInput} = props;
     
         return (
-            (this.props.saved) ?
+            (props.saved) ?
         <div className="contentContainer">
         <div className="leftContainer">
           <div className="leftDiv">Email:</div>
@@ -23,6 +22,5 @@ class Email extends Component {
             onChange={(event) => handleInput(event)}
             ></input>
         );
-      }
 }
 export default Email;

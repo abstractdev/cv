@@ -1,12 +1,11 @@
-import React, { Component } from "react";
-import '/home/a/repos/cv/cv-project/src/App.css'
+import React from "react";
+import '../App.css'
 
-class Wdates extends Component {
-  render() {
-    const { wDates, handleInput} = this.props;
+const Wdates = (props) => {
+    const { wDates, handleInput} = props;
 
     return (
-      (this.props.saved) ?
+      (props.saved) ?
       <div className="contentContainer">
       <div className="leftContainer">
         <div className="leftDiv">Dates:</div>
@@ -24,6 +23,5 @@ class Wdates extends Component {
       ></input>
         
     );
-  }
 }
 export default Wdates;

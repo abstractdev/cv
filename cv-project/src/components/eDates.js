@@ -1,12 +1,11 @@
-import React, { Component } from "react";
-import '/home/a/repos/cv/cv-project/src/App.css'
+import React from "react";
+import '../App.css'
 
-class Edates extends Component {
-  render() {
-    const { eDates, handleInput} = this.props;
+const Edates = (props) => {
+    const { eDates, handleInput} = props;
 
     return (
-      (this.props.saved) ?
+      (props.saved) ?
       <div className="contentContainer">
       <div className="leftContainer">
         <div className="leftDiv">Dates:</div>
@@ -24,6 +23,5 @@ class Edates extends Component {
       ></input>
         
     );
-  }
 }
 export default Edates;

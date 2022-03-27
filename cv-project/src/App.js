@@ -1,118 +1,116 @@
-import React, { Component } from "react";
+import React, {useState} from "react";
 import "./App.css";
 import General from "./components/General";
 import Education from "./components/Education";
 import Work from "./components/Work";
 import Header from "./components/Header";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+const App = () => {
+    const [state, setState] = useState({
+      name: "Odin McOdinson",
+      email: "Odin@OdinProject.com",
+      phone: "1234567890",
+      school: "Lorem Ipsum",
+      degree: "Lorem Ipsum",
+      eDates: "1/1/1",
+      company: "Lorem Ipsum",
+      title: "Lorem Ipsum",
+      resp: "Lorem Ipsum",
+      wDates: "9/9/9",
+      isSubmitted: false,
+      generalSaved: false,
+      educationSaved: false,
+      workSaved: false
+    });
 
-    this.state = {
-        name: "Odin McOdinson",
-        email: "Odin@OdinProject.com",
-        phone: "1234567890",
-        school: "Lorem Ipsum",
-        degree: "Lorem Ipsum",
-        eDates: "1/1/1",
-        company: "Lorem Ipsum",
-        title: "Lorem Ipsum",
-        resp: "Lorem Ipsum",
-        wDates: "9/9/9",
-        isSubmitted: false,
-        generalSaved: false,
-        educationSaved: false,
-        workSaved: false
-      };
-    this.handleInput = this.handleInput.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.checkIfSaved = this.checkIfSaved.bind(this);
-  }
-  
-
-  handleInput(event) {
-    this.setState({
+  const handleInput = (event) => {
+    setState({...state,
       [event.target.name]: event.target.value
-    }, () => console.log(this.state));
+    });
   }
 
-  handleSubmit (event) {
+  const handleSubmit  = (event) => {
     event.preventDefault();
     switch (event.target.className) {
       case "generalForm":
-        this.setState({
-          name: this.state.name,
-          email: this.state.email,
-          phone: this.state.phone,
-        }, () => console.log(this.state))
+        setState({
+          ...state,
+          name: state.name,
+          email: state.email,
+          phone: state.phone,
+        })
         break;
       case "educationForm":
-        this.setState({
-          school: this.state.school,
-          degree: this.state.degree,
-          eDates: this.state.eDates,
-        }, () => console.log(this.state))
+        setState({
+          ...state,
+          school: state.school,
+          degree: state.degree,
+          eDates: state.eDates,
+        })
         break;
       case "workForm":
-        this.setState({
-          company: this.state.company,
-          title: this.state.title,
-          resp: this.state.resp,
-          wDates: this.state.wDates,
-        }, () => console.log(this.state))
+        setState({
+          ...state,
+          company: state.company,
+          title: state.title,
+          resp: state.resp,
+          wDates: state.wDates,
+        })
         break;
       case "createCVButton":
-        this.setState({ 
-          name: this.state.name,
-          email: this.state.email,
-          phone: this.state.phone,
-          school: this.state.school,
-          degree: this.state.degree,
-          eDates: this.state.eDates,
-          company: this.state.company,
-          title: this.state.title,
-          resp: this.state.resp,
-          wDates: this.state.wDates,
-          isSubmitted: !this.state.isSubmitted
-        }, () => console.log(this.state));
+        setState({
+          ...state,
+          name: state.name,
+          email: state.email,
+          phone: state.phone,
+          school: state.school,
+          degree: state.degree,
+          eDates: state.eDates,
+          company: state.company,
+          title: state.title,
+          resp: state.resp,
+          wDates: state.wDates,
+          isSubmitted: !state.isSubmitted
+        });
         break;
       }
   }
 
-  checkIfSaved(event) {
+  const checkIfSaved = (event) => {
     switch (event.target.className) {
       case "generalSaveButton":
-        this.setState({
+        setState({
+          ...state,
           generalSaved: true
-        }, () => console.log(this.state.generalSaved))
+        })
         break;
       case "educationSaveButton":
-        this.setState({
+        setState({
+          ...state,
           educationSaved: true
         })
         break;
       case "workSaveButton":
-        this.setState({
+        setState({
+          ...state,
           workSaved: true
         })
         break;
     }
   }
   
-  render() {
-    const { name, email, phone, school, degree, eDates, company, title, resp, wDates, isSubmitted, generalSaved, educationSaved, workSaved} = this.state
+    const { name, email, phone, school, degree, eDates, company, title, resp, wDates, isSubmitted, generalSaved, educationSaved, workSaved} = state
     return (
-        (!this.state.isSubmitted) ?
+        (!state.isSubmitted) ?
       <div>
         <div className="headerContainer">
           <Header /> 
         </div>
       <div className="app">
-        <General name={name} email={email} phone={phone} handleInput={this.handleInput} handleSubmit={this.handleSubmit} isSubmitted={isSubmitted} checkIfSaved={this.checkIfSaved} generalSaved={generalSaved} educationSaved={educationSaved} workSaved={workSaved}/>
-        <Education school={school} degree={degree} eDates={eDates} handleInput={this.handleInput} handleSubmit={this.handleSubmit} isSubmitted={isSubmitted} checkIfSaved={this.checkIfSaved} generalSaved={generalSaved} educationSaved={educationSaved} workSaved={workSaved}/>
-        <Work company={company} title={title} resp={resp} wDates={wDates} handleInput={this.handleInput} handleSubmit={this.handleSubmit} isSubmitted={isSubmitted} checkIfSaved={this.checkIfSaved} generalSaved={generalSaved} educationSaved={educationSaved} workSaved={workSaved}/>
-        <button className={(generalSaved && educationSaved && workSaved) ? "createCVButton" : "hide"} onClick={(event) => this.handleSubmit(event)}>Create CV</button>
+        <General name={name} email={email} phone={phone} handleInput={handleInput} handleSubmit={handleSubmit} isSubmitted={isSubmitted} checkIfSaved={checkIfSaved} generalSaved={generalSaved} educationSaved={educationSaved} workSaved={workSaved}/>
+        <Education school={school} degree={degree} eDates={eDates} handleInput={handleInput} handleSubmit={handleSubmit} isSubmitted={isSubmitted} checkIfSaved={checkIfSaved} generalSaved={generalSaved} educationSaved={educationSaved} workSaved={workSaved}/>
+        <Work company={company} title={title} resp={resp} wDates={wDates} handleInput={handleInput} handleSubmit={handleSubmit} isSubmitted={isSubmitted} checkIfSaved={checkIfSaved} generalSaved={generalSaved} educationSaved={educationSaved} workSaved={workSaved}/>
+        <button className={(generalSaved && educationSaved && workSaved) ? "createCVButton" : "hide"} onClick={(event) => handleSubmit(event)}>Create CV</button>
       </div>
       </div> :
         <div class="parent">
@@ -141,6 +139,5 @@ class App extends Component {
           <div class="div23">{wDates} </div>
       </div>
     )
-  }
 }
 export default App;

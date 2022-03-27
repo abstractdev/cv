@@ -1,12 +1,11 @@
-import React, { Component } from "react";
-import '/home/a/repos/cv/cv-project/src/App.css'
+import React from "react";
+import '../App.css'
 
-class Company extends Component {
-  render() {
-    const { company, handleInput} = this.props;
+const Company = (props) => {
+    const { company, handleInput} = props;
 
     return (
-      (this.props.saved) ?
+      (props.saved) ?
       <div className="contentContainer">
       <div className="leftContainer">
         <div className="leftDiv">Company:</div>
@@ -24,6 +23,5 @@ class Company extends Component {
       ></input>
         
     );
-  }
 }
 export default Company;

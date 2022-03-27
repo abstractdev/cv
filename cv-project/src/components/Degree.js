@@ -1,12 +1,11 @@
-import React, { Component } from "react";
-import '/home/a/repos/cv/cv-project/src/App.css'
+import React from "react";
+import '../App.css'
 
-class Degree extends Component {
-  render() {
-    const { degree, handleInput} = this.props;
+const Degree = (props) => {
+    const { degree, handleInput} = props;
 
     return (
-      (this.props.saved) ?
+      (props.saved) ?
       <div className="contentContainer">
       <div className="leftContainer">
         <div className="leftDiv">Degree:</div>
@@ -24,6 +23,5 @@ class Degree extends Component {
       ></input>
         
     );
-  }
 }
 export default Degree;
