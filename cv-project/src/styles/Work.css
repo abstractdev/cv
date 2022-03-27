@@ -7,13 +7,11 @@
 }
 .workHeaderContainer {
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: .5rem;
 }
 
 .workHeader {
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 
@@ -23,6 +21,7 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    padding: 3rem;
 }
 
 .companyContainer {
@@ -54,7 +53,7 @@
     justify-content: space-between;
 }
 
-.workSubmitButton {
+.workSaveButton {
     width: 50%;
     height: 50px;
     border-radius: 20px;

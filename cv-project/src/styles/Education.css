@@ -7,14 +7,12 @@
 }
 .educationHeaderContainer {
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: .5rem;
 }
 
 
 .educationHeader {
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 
@@ -24,6 +22,7 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    padding: 3rem;
 }
 .schoolContainer {
     display: flex;
@@ -47,7 +46,7 @@
     justify-content: space-between;
 }
 
-.educationSubmitButton {
+.educationSaveButton {
     width: 50%;
     height: 50px;
     border-radius: 20px;

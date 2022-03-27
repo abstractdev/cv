@@ -6,13 +6,12 @@
 }
 
 .generalHeaderContainer {
+    flex: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: .5rem;
 }
 .generalHeader {
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 
@@ -22,6 +21,7 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    padding: 3rem;
 }
 
 .nameContainer {
@@ -46,7 +46,7 @@
     justify-content: space-between;
 }
 
-.generalSubmitButton {
+.generalSaveButton {
     width: 50%;
     height: 50px;
     border-radius: 20px;
