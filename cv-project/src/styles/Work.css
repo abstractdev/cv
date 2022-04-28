@@ -1,60 +1,59 @@
 .workContainer {
-    display: flex;
-    flex-direction: column;
-    background: purple;
-    padding: 2rem;
-
+  display: flex;
+  flex-direction: column;
+  background: #505050;
+  padding: 2rem;
 }
 .workHeaderContainer {
-    display: flex;
-    gap: .5rem;
+  display: flex;
+  gap: 0.5rem;
+  background: #121212;
 }
 
 .workHeader {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
-
 .workForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 3rem;
 }
 
 .companyContainer {
-    display: flex;
-    width: 65%;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  width: 65%;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
 }
 .titleContainer {
-    display: flex;
-    width: 65%;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  width: 65%;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
 }
 .respContainer {
-    display: flex;
-    width: 65%;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  width: 65%;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
 }
 .wDatesContainer {
-    display: flex;
-    width: 65%;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  width: 65%;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .workSaveButton {
-    width: 50%;
-    height: 50px;
-    border-radius: 20px;
+  width: 50%;
+  height: 50px;
+  border-radius: 20px;
 }
